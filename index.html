@@ -9,18 +9,328 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#fff;--soft:#fafafa;--text:#1b1b1b;--muted:#5e5e5e;--faint:#8b8b8b;--border:#e5e5e5;--accent:#2b5d8a;--accent-soft:#eef3f8;--radius:9px;--max:900px}
-    [data-theme="dark"]{--bg:#141414;--soft:#1b1b1b;--text:#e8e8e8;--muted:#aaa;--faint:#777;--border:#2d2d2d;--accent:#84b4d9;--accent-soft:#1c2933}
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:auto;padding:0 24px}
-    header{border-bottom:1px solid var(--border);position:sticky;top:0;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);z-index:5}.nav{height:58px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:Lora,serif;font-weight:600;font-size:17px;color:var(--text)}
-    nav{display:flex;gap:20px;align-items:center}nav a{color:var(--muted);font-size:13px;font-weight:500}.theme{border:1px solid var(--border);background:var(--soft);color:var(--muted);border-radius:999px;padding:6px 10px;cursor:pointer}
-    main{padding:52px 0 80px}.hero{display:grid;grid-template-columns:1fr 178px;gap:46px;align-items:center;padding-bottom:45px;border-bottom:1px solid var(--border)}h1{font-family:Lora,serif;font-size:43px;line-height:1.16;margin-bottom:9px}.role{font-size:17px;color:var(--muted);margin-bottom:15px}.intro{color:var(--muted);max-width:650px}.links{display:flex;flex-wrap:wrap;gap:9px;margin-top:19px}.pill{padding:6px 11px;border:1px solid var(--border);border-radius:999px;background:var(--soft);font-size:13px;font-weight:500}.portrait{width:178px;height:178px;border-radius:12px;border:1px solid var(--border);object-fit:cover;background:var(--soft)}
-    section{padding:40px 0;border-bottom:1px solid var(--border)}section:last-child{border-bottom:0}.section-title{font-family:Lora,serif;font-size:25px;margin-bottom:20px}.research{display:flex;flex-wrap:wrap;gap:8px}.tag{padding:6px 11px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:13px}
-    .item{display:grid;grid-template-columns:155px 1fr;gap:22px;margin:0 0 22px}.date{color:var(--faint);font-size:13px;padding-top:2px}.item h3{font-size:15px;margin-bottom:2px}.sub{color:var(--muted);font-size:14px}.details{margin-top:7px;color:var(--muted);font-size:14px}.details li{margin-left:18px;margin-bottom:3px}
-    .pub-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.filter{border:1px solid var(--border);background:var(--bg);color:var(--muted);padding:6px 11px;border-radius:999px;cursor:pointer;font-size:13px}.filter.active{background:var(--accent);border-color:var(--accent);color:white}.pub{padding:0 0 17px;margin-bottom:17px;border-bottom:1px dashed var(--border)}.pub:last-child{border:0}.pub-title{font-weight:600;line-height:1.45}.authors,.venue{color:var(--muted);font-size:13.5px;margin-top:3px}.me{color:var(--text);font-weight:600}.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;margin-left:6px;padding:2px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent);vertical-align:1px}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:35px}.awards-block{margin-top:30px}.awards-block .section-title{margin-bottom:14px}.clean{list-style:none}.clean li{margin-bottom:10px;color:var(--muted)}footer{color:var(--faint);font-size:12px;text-align:center;padding:26px;border-top:1px solid var(--border)}
-    @media(max-width:720px){nav a{display:none}.hero{grid-template-columns:1fr}.portrait{order:-1;width:132px;height:132px}.item{grid-template-columns:1fr;gap:2px}.two-col{grid-template-columns:1fr}h1{font-size:36px}main{padding-top:34px}.affiliation{color: var(--muted);font-size: 15px;margin-top: 3px}}
+    :root{
+      --bg:#fff;
+      --soft:#fafafa;
+      --text:#1b1b1b;
+      --muted:#5e5e5e;
+      --faint:#8b8b8b;
+      --border:#e5e5e5;
+      --accent:#2b5d8a;
+      --accent-soft:#eef3f8;
+      --radius:9px;
+      --max:900px;
+    }
+
+    [data-theme="dark"]{
+      --bg:#141414;
+      --soft:#1b1b1b;
+      --text:#e8e8e8;
+      --muted:#aaa;
+      --faint:#777;
+      --border:#2d2d2d;
+      --accent:#84b4d9;
+      --accent-soft:#1c2933;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:0 24px;
+    }
+
+    header{
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      background:color-mix(in srgb,var(--bg) 92%,transparent);
+      backdrop-filter:blur(12px);
+      z-index:5;
+    }
+
+    .nav{
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      font-family:Lora,serif;
+      font-weight:600;
+      font-size:17px;
+      color:var(--text);
+    }
+
+    nav{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    nav a{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:500;
+    }
+
+    .theme{
+      border:1px solid var(--border);
+      background:var(--soft);
+      color:var(--muted);
+      border-radius:999px;
+      padding:6px 10px;
+      cursor:pointer;
+    }
+
+    main{
+      padding:52px 0 80px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 178px;
+      gap:46px;
+      align-items:center;
+      padding-bottom:45px;
+      border-bottom:1px solid var(--border);
+    }
+
+    h1{
+      font-family:Lora,serif;
+      font-size:43px;
+      line-height:1.16;
+      margin-bottom:9px;
+    }
+
+    .role{
+      font-size:17px;
+      color:var(--muted);
+      margin-bottom:2px;
+    }
+
+    .affiliation{
+      color:var(--muted);
+      font-size:15px;
+      margin-top:2px;
+      margin-bottom:16px;
+    }
+
+    .intro{
+      color:var(--muted);
+      max-width:650px;
+      margin-bottom:10px;
+    }
+
+    .intro:last-of-type{
+      margin-bottom:0;
+    }
+
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:19px;
+    }
+
+    .pill{
+      padding:6px 11px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:var(--soft);
+      font-size:13px;
+      font-weight:500;
+    }
+
+    .portrait{
+      width:178px;
+      height:178px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      object-fit:cover;
+      background:var(--soft);
+    }
+
+    section{
+      padding:40px 0;
+      border-bottom:1px solid var(--border);
+    }
+
+    section:last-child{
+      border-bottom:0;
+    }
+
+    .section-title{
+      font-family:Lora,serif;
+      font-size:25px;
+      margin-bottom:18px;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+    }
+
+    .content-block{
+      margin-top:36px;
+    }
+
+    .content-block .section-title{
+      margin-bottom:14px;
+    }
+
+    .clean{
+      list-style:none;
+    }
+
+    .clean li{
+      margin-bottom:10px;
+      color:var(--muted);
+    }
+
+    .clean li:last-child{
+      margin-bottom:0;
+    }
+
+    .award-note{
+      color:var(--faint);
+      font-size:13px;
+    }
+
+    .pub-note{
+      color:var(--muted);
+      margin-top:-7px;
+      margin-bottom:18px;
+      font-size:13.5px;
+    }
+
+    .pub-controls{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-bottom:20px;
+    }
+
+    .filter{
+      border:1px solid var(--border);
+      background:var(--bg);
+      color:var(--muted);
+      padding:6px 11px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:13px;
+    }
+
+    .filter.active{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:white;
+    }
+
+    .pub{
+      padding:0 0 17px;
+      margin-bottom:17px;
+      border-bottom:1px dashed var(--border);
+    }
+
+    .pub:last-child{
+      border:0;
+    }
+
+    .pub-title{
+      font-weight:600;
+      line-height:1.45;
+    }
+
+    .authors,
+    .venue{
+      color:var(--muted);
+      font-size:13.5px;
+      margin-top:3px;
+    }
+
+    .me{
+      color:var(--text);
+      font-weight:600;
+    }
+
+    .badge{
+      display:inline-block;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin-left:6px;
+      padding:2px 6px;
+      border-radius:4px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      vertical-align:1px;
+    }
+
+    footer{
+      color:var(--faint);
+      font-size:12px;
+      text-align:center;
+      padding:26px;
+      border-top:1px solid var(--border);
+    }
+
+    @media(max-width:720px){
+      nav a{
+        display:none;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .portrait{
+        order:-1;
+        width:132px;
+        height:132px;
+      }
+
+      .two-col{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+      h1{
+        font-size:36px;
+      }
+
+      main{
+        padding-top:34px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -30,8 +340,7 @@
     <div><h1>Siyuan Yang</h1>
       <div class="role">Wallenberg–NTU Presidential Postdoctoral Fellow</div>
       <div class="affiliation">
-      Division of Robotics, Perception and Learning,
-      KTH Royal Institute of Technology
+        Division of Robotics, Perception and Learning, KTH Royal Institute of Technology
       </div>
       <p class="intro">I am a Wallenberg–NTU Presidential Postdoctoral Fellow, currently hosted at KTH Royal Institute of Technology and working with <a href="https://www.kth.se/profile/hedvig/">Prof. Hedvig Kjellström</a>. Before joining KTH, I conducted postdoctoral research at the Rapid-Rich Object Search Lab, Nanyang Technological University. </p>
       <p class="intro">I received my Ph.D. and M.Sc. degrees from Nanyang Technological University, where my Ph.D. research was supervised by <a href="https://dr.ntu.edu.sg/entities/person/Kot-Chichung-Alex">Prof. Alex C. Kot</a> and <a href="https://dr.ntu.edu.sg/entities/person/Lu-Shijian">Assoc. Prof. Shijian Lu</a>, and my B.Eng. degree from Harbin Institute of Technology. My research focuses on human-centered visual understanding, including video and skeleton action recognition, 3D human motion understanding, and human pose estimation.</p>
@@ -55,7 +364,7 @@
       </div>
     </div>
 
-    <div class="awards-block">
+    <div class="content-block awards-block">
       <h2 class="section-title">Awards</h2>
       <ul class="clean">
         <li><strong>Wallenberg–NTU Presidential Postdoctoral Fellowship</strong>, 2024</li>
@@ -63,7 +372,7 @@
       </ul>
     </div>
 
-    <div class="funding-block" style="margin-top: 48px;">
+    <div class="content-block funding-block">
       <h2 class="section-title">Research Funding</h2>
     
       <ul class="clean">
@@ -83,7 +392,7 @@
       </ul>
     </div>
 
-    <div class="teaching-block">
+    <div class="content-block teaching-block">
       <h2 class="section-title">Teaching</h2>
     
       <ul class="clean">
@@ -98,10 +407,15 @@
         </li>
       </ul>
     </div>
-    
   </section>
 
-  <section id="publications"><h2 class="section-title">Selected Publications</h2><div class="pub-controls"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="journal">Journal</button><button class="filter" data-filter="conference">Conference</button></div>
+  <section id="publications">
+    <h2 class="section-title">Selected Publications</h2>
+    <p class="pub-note">
+      For a complete and up-to-date publication list, please see my
+      <a href="https://scholar.google.com/citations?user=lzLsF2MAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile</a>.
+    </p>
+    <div class="pub-controls"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="journal">Journal</button><button class="filter" data-filter="conference">Conference</button></div>
     <div id="pub-list">
       <article class="pub" data-type="conference"><div class="pub-title">FaceComposer: Learning Coherent and Realistic Face Composition from References <span class="badge">Oral</span></div><div class="authors">Ling Li, Lanqing Guo, <span class="me">Siyuan Yang</span>, Yufei Wang, Qian Zheng, Alex C. Kot, Weisi Lin, Lihui Chen</div><div class="venue">IJCNN, 2026</div></article>
       <article class="pub" data-type="conference"><div class="pub-title">Beyond the Horizon: Decoupling Multi-View UAV Action Recognition via Partial Order Transfer</div><div class="authors">Wenxuan Liu, Zhuo Zhou, Xuemei Jia, <span class="me">Siyuan Yang</span>, Wenxin Huang, Xian Zhong, Chia-Wen Lin</div><div class="venue">AAAI, 2026</div></article>
