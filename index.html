@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Siyuan Yang — Wallenberg-NTU Presidential Postdoctoral Fellow. Research in video and skeleton action recognition, and human pose estimation." />
   <title>Siyuan Yang — Academic Homepage</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#fff;
@@ -193,10 +195,30 @@
       margin-bottom:18px;
     }
 
-    .two-col{
+    .service-list{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:35px;
+      grid-template-columns:max-content minmax(0,1fr);
+      gap:8px 16px;
+      color:var(--muted);
+    }
+
+    .service-list dt{
+      font-weight:600;
+    }
+
+    .service-list dd{
+      margin:0;
+    }
+
+    .teaching-affiliation{
+      color:var(--text);
+      font-size:15px;
+      font-weight:700;
+      margin:22px 0 8px;
+    }
+
+    .teaching-affiliation:first-of-type{
+      margin-top:0;
     }
 
     .content-block{
@@ -318,11 +340,6 @@
         height:132px;
       }
 
-      .two-col{
-        grid-template-columns:1fr;
-        gap:0;
-      }
-
       h1{
         font-size:36px;
       }
@@ -330,207 +347,494 @@
       main{
         padding-top:34px;
       }
+    }
 
-      .teaching-affiliation{
-        color:var(--faint);
-        font-size:13px;
-        margin-top:-10px;
-        margin-bottom:16px;
+    @media(max-width:520px){
+      .service-list{
+        grid-template-columns:140px minmax(0,1fr);
+        column-gap:12px;
       }
     }
   </style>
 </head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="#top">Home</a><nav><a href="#about">About</a><a href="#service">Service</a><a href="#preprints">Publications</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button></nav></div></header>
-<main class="wrap" id="top">
-  <div class="hero" id="about">
-    <div><h1>Siyuan Yang</h1>
-      <div class="role">Wallenberg–NTU Presidential Postdoctoral Fellow</div>
-      <div class="affiliation">
-        Division of Robotics, Perception and Learning, KTH Royal Institute of Technology
-      </div>
-      <p class="intro">
-        I am a Wallenberg–NTU Presidential Postdoctoral Fellow, currently hosted at the Division of Robotics, Perception and Learning, KTH Royal Institute of Technology and working with
-        <a href="https://www.kth.se/profile/hedvig/">Prof. Hedvig Kjellström</a>. During the first year of my fellowship, I was based at the College of Computing and Data Science, Nanyang Technological University, where I worked with
-        <a href="https://dr.ntu.edu.sg/entities/person/Lin-Weisi">Prof. Weisi Lin</a>.
-      </p>
-    
-      <p class="intro">
-        I received my Ph.D. and M.Sc. degrees from Nanyang Technological University. My Ph.D. research was conducted at the Rapid-Rich Object Search Lab and supervised by
-        <a href="https://dr.ntu.edu.sg/entities/person/Kot-Chichung-Alex">Prof. Alex C. Kot</a>
-        and
-        <a href="https://dr.ntu.edu.sg/entities/person/Lu-Shijian">Assoc. Prof. Shijian Lu</a>.
-        I received my B.Eng. degree from Harbin Institute of Technology.
-        My research focuses on human-centered visual understanding, including video and skeleton-based action recognition, 3D human motion understanding, and human pose estimation.
-      </p>
-      <div class="links">
-        <a class="pill" href="mailto:siyuany@kth.se">siyuany@kth.se</a>
-      
-        <a class="pill"
-           href="https://www.kth.se/profile/siyuany"
-           target="_blank"
-           rel="noopener">
-          KTH Profile
-        </a>
-      
-        <a class="pill"
-           href="https://scholar.google.com/citations?user=lzLsF2MAAAAJ&hl=en"
-           target="_blank"
-           rel="noopener">
-          Google Scholar
-        </a>
-      </div>
-    </div><img class="portrait" src="assets/siyuan_yang.jpg" alt="Siyuan Yang profile photo placeholder" />
-  </div>
-
-  <section id="service">
-    <h2 class="section-title">Professional Service</h2>
-    <dl class="service-list">
-      <dt>Area Chair:</dt>
-      <dd>ICLR 2027, BMVC 2026, VCIP 2026</dd>
-    
-      <dt>Registration Chair:</dt>
-      <dd>BMVC 2026</dd>
-    
-      <dt>Journal Reviewer:</dt>
-      <dd>IEEE TPAMI, TIP, TMM, TII, TCSVT, IJCV, and others</dd>
-    
-      <dt>Conference Reviewer:</dt>
-      <dd>CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI,
-          WACV, ICME, ICASSP, and others</dd>
-    </dl>
-
-    <div class="content-block awards-block">
-      <h2 class="section-title">Awards</h2>
-      <ul class="clean">
-        <li><strong>Wallenberg–NTU Presidential Postdoctoral Fellowship</strong>, 2024</li>
-        <li><strong>Singapore Data Science Consortium Dissertation Research Fellowship</strong>, 2021 <span class="award-note">(awarded to 10 doctoral researchers annually)</span> </li>
-      </ul>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">Home</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#service">Service</a>
+        <a href="#preprints">Publications</a>
+        <button class="theme" id="theme" aria-label="Toggle dark mode">◐</button>
+      </nav>
     </div>
+  </header>
 
-    <div class="content-block funding-block">
-      <h2 class="section-title">Research Funding</h2>
-    
-      <ul class="clean">
-        <li>
-          <strong>Principal Investigator (PI):</strong>
-          All-in-One LLM Framework for 3D Human Motion Understanding,
-          Nanyang Technological University,
-          SGD 100,000, 2024
-        </li>
-    
-        <li>
-          <strong>Principal Investigator (PI):</strong>
-          All-in-One LLM Framework for 3D Human Motion Understanding,
-          Knut and Alice Wallenberg Foundation,
-          SEK 300,000, 2026
-        </li>
-      </ul>
-    </div>
+  <main class="wrap" id="top">
+    <div class="hero" id="about">
+      <div>
+        <h1>Siyuan Yang</h1>
 
-    <div class="content-block teaching-block">
-      <h2 class="section-title">Teaching</h2>
-    
-      <p class="teaching-affiliation">
-        KTH Royal Institute of Technology
-      </p>
-    
-      <ul class="clean">
-        <li>
-          <strong>Guest Lecturer:</strong>
-          DT2140: Multimodal Interaction and Interfaces (2026)
-        </li>
-      </ul>
-    
-      <p class="teaching-affiliation">
-        School of Electrical and Electronic Engineering,
-        Nanyang Technological University
-      </p>
-    
-      <ul class="clean">
-        <li>
-          <strong>Lab Instructor:</strong>
-          IE2110: Signals and Systems (2025)
-        </li>
-        <li>
-          <strong>Teaching Assistant:</strong>
-          EE1005: C Programming;
-          IE2110 & EE2010: Signals and Systems;
-          EE4483: Artificial Intelligence and Data Mining
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="preprints">
-    <h2 class="section-title">Preprints</h2>
-    <div id="preprint-list">
-      <article class="pub" data-type="preprint">
-        <div class="pub-title">Image Diffusion Models Are Good 3D Human Motion Generators</div>
-        <div class="authors"><span class="me">Siyuan Yang*</span>, Chong Wang*, Hao Cheng, Jun Liu, Bihan Wen, Alex C. Kot, Hedvig Kjellström</div>
-        <div class="venue">arXiv preprint, 2026 · <a href="https://arxiv.org/abs/2610.14254" target="_blank" rel="noopener">arXiv:2610.14254</a></div>
-      </article>
-      <article class="pub" data-type="preprint">
-        <div class="pub-title">Skeleton-to-Image Encoding: Enabling Skeleton Representation Learning via Vision-Pretrained Models</div>
-        <div class="authors"><span class="me">Siyuan Yang</span>, Jun Liu, Hao Cheng, Chong Wang, Shijian Lu, Hedvig Kjellström, Weisi Lin, Alex C. Kot</div>
-        <div class="venue">arXiv preprint, 2026 · <a href="https://arxiv.org/abs/2603.05963" target="_blank" rel="noopener">arXiv:2603.05963</a></div>
-      </article>
-      <article class="pub" data-type="preprint">
-        <div class="pub-title">TAME: Topology-Aware Text-Driven Motion Editing across Heterogeneous Humanoid Skeletons</div>
-        <div class="authors">Qichen Zheng, <span class="me">Siyuan Yang<sup>#</sup></span>, Chong Wang, Jun Liu, Shijian Lu, Alex C. Kot, Kwok-Yan Lam</div>
-        <div class="venue">arXiv preprint, 2026 · <a href="https://arxiv.org/abs/2610.04529" target="_blank" rel="noopener">arXiv:2610.04529</a></div>
-      </article>
-      <article class="pub" data-type="preprint">
-        <div class="pub-title">
-          Persistence Forcing: Exploiting Feature Specialization in Pixel-Space Diffusion
+        <div class="role">
+          Wallenberg–NTU Presidential Postdoctoral Fellow
         </div>
-        <div class="authors">
-          Chong Wang, Zixuan Fu, Shiqi Huang, <span class="me">Siyuan Yang</span>, Hao Cheng, Bihan Wen
+
+        <div class="affiliation">
+          Division of Robotics, Perception and Learning, KTH Royal Institute of Technology
         </div>
-        <div class="venue">
-          arXiv preprint, 2026 ·
-          <a href="https://arxiv.org/abs/2609.36014"
+
+        <p class="intro">
+          I am a Wallenberg–NTU Presidential Postdoctoral Fellow, currently hosted at the Division of Robotics, Perception and Learning, KTH Royal Institute of Technology and working with
+          <a href="https://www.kth.se/profile/hedvig/">Prof. Hedvig Kjellström</a>.
+          During the first year of my fellowship, I was based at the College of Computing and Data Science, Nanyang Technological University, where I worked with
+          <a href="https://dr.ntu.edu.sg/entities/person/Lin-Weisi">Prof. Weisi Lin</a>.
+        </p>
+
+        <p class="intro">
+          I received my Ph.D. and M.Sc. degrees from Nanyang Technological University.
+          My Ph.D. research was conducted at the Rapid-Rich Object Search Lab and supervised by
+          <a href="https://dr.ntu.edu.sg/entities/person/Kot-Chichung-Alex">Prof. Alex C. Kot</a>
+          and
+          <a href="https://dr.ntu.edu.sg/entities/person/Lu-Shijian">Assoc. Prof. Shijian Lu</a>.
+          I received my B.Eng. degree from Harbin Institute of Technology.
+          My research focuses on human-centered visual understanding, including video and skeleton-based action recognition, 3D human motion understanding, and human pose estimation.
+        </p>
+
+        <div class="links">
+          <a class="pill" href="mailto:siyuany@kth.se">siyuany@kth.se</a>
+
+          <a class="pill"
+             href="https://www.kth.se/profile/siyuany"
              target="_blank"
-             rel="noopener">arXiv:2609.36014</a>
-        </div>
-      </article>
-    </div>
-    <p style="color:var(--faint);font-size:12px;margin-top:12px">* Equal contribution. <sup>#</sup> Corresponding author.</p>
-  </section>
+             rel="noopener">
+            KTH Profile
+          </a>
 
-  <section id="publications">
-    <h2 class="section-title">Selected Publications</h2>
-    <p class="pub-note">
-      For a complete and up-to-date publication list, please see my
-      <a href="https://scholar.google.com/citations?user=lzLsF2MAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile</a>.
-    </p>
-    <div class="pub-controls"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="journal">Journal</button><button class="filter" data-filter="conference">Conference</button></div>
-    <div id="pub-list">
-      <article class="pub" data-type="conference"><div class="pub-title">FaceComposer: Learning Coherent and Realistic Face Composition from References <span class="badge">Oral</span></div><div class="authors">Ling Li, Lanqing Guo, <span class="me">Siyuan Yang</span>, Yufei Wang, Qian Zheng, Alex C. Kot, Weisi Lin, Lihui Chen</div><div class="venue">IJCNN, 2026</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Beyond the Horizon: Decoupling Multi-View UAV Action Recognition via Partial Order Transfer</div><div class="authors">Wenxuan Liu, Zhuo Zhou, Xuemei Jia, <span class="me">Siyuan Yang</span>, Wenxin Huang, Xian Zhong, Chia-Wen Lin</div><div class="venue">AAAI, 2026</div></article>
-      <article class="pub" data-type="journal"><div class="pub-title">Proactive Image Manipulation Detection and Tracing in Fake News</div><div class="authors">Ruohan Meng, <span class="me">Siyuan Yang</span>, Zhili Zhou, Qi Cui, Kwok-Yan Lam, Zengwei Zheng, Alex C. Kot</div><div class="venue">IEEE Transactions on Dependable and Secure Computing, 2026</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Vid-Group: Temporal Video Grounding Pretraining from Unlabeled Videos in the Wild</div><div class="authors">Peijun Bao, Chenqi Kong, <span class="me">Siyuan Yang</span>, Zihao Shao, Xinghao Jiang, Boon Poh Ng, Meng Hwa Er, Alex C. Kot</div><div class="venue">ICCV, 2025</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">MTL-UE: Learning to Learn Nothing for Multi-Task Learning</div><div class="authors">Yi Yu, Song Xia, <span class="me">Siyuan Yang</span>, Wenhan Yang, Shijian Lu, Yap-Peng Tan, Alex C. Kot</div><div class="venue">ICML, 2025</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Reconciling Stochastic and Deterministic Strategies for Zero-shot Image Restoration using Diffusion Model in Dual</div><div class="authors">Chong Wang, Lanqing Guo, Zixuan Fu, <span class="me">Siyuan Yang</span>, Bihan Wen</div><div class="venue">CVPR, 2025</div></article>
-      <article class="pub" data-type="journal"><div class="pub-title">One-Shot Action Recognition via Multi-Scale Spatial-Temporal Skeleton Matching</div><div class="authors"><span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu, Meng Hwa Er, Alex C. Kot</div><div class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">STSP: Spatial-Temporal Subspace Projection for Video Class-Incremental Learning</div><div class="authors">Hao Cheng, <span class="me">Siyuan Yang</span>, Joey Tianyi Zhou, Alex C. Kot, Bihan Wen</div><div class="venue">ECCV, 2024</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Towards Physical World Backdoor Attacks against Skeleton Action Recognition</div><div class="authors">Qichen Zheng, Yi Yu, <span class="me">Siyuan Yang<sup>#</sup></span>, Jun Liu, Kwok-Yan Lam, Alex C. Kot</div><div class="venue">ECCV, 2024</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Unlearnable Examples Detection via Iterative Filtering <span class="badge">Oral</span></div><div class="authors">Yi Yu*, Qichen Zheng*, <span class="me">Siyuan Yang<sup>#</sup></span>, Wenhan Yang, Jun Liu, Shijian Lu, Yap-Peng Tan, Kwok-Yan Lam, Alex C. Kot</div><div class="venue">ICANN, 2024</div></article>
-      <article class="pub" data-type="journal"><div class="pub-title">Self-Supervised 3D Action Representation Learning with Skeleton Cloud Colorization</div><div class="authors"><span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu, Meng Hwa Er, Yongjian Hu, Alex C. Kot</div><div class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence, 2023</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Frequency Guidance Matters in Few-Shot Learning <span class="badge">Oral</span></div><div class="authors">Hao Cheng, <span class="me">Siyuan Yang</span>, Joey Tianyi Zhou, Alex C. Kot, Bihan Wen</div><div class="venue">ICCV, 2023</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Temporal Coherent Test-Time Optimization for Robust Video Classification</div><div class="authors">Chenyu Yi, <span class="me">Siyuan Yang</span>, Yufei Wang, Haoliang Li, Yap-Peng Tan, Alex C. Kot</div><div class="venue">ICLR, 2023</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Skeleton Cloud Colorization for Unsupervised 3D Action Representation Learning</div><div class="authors"><span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu, Meng Hwa Er, Alex C. Kot</div><div class="venue">ICCV, 2021</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Benchmarking the Robustness of Spatial-Temporal Models Against Corruptions</div><div class="authors">Chenyu Yi*, <span class="me">Siyuan Yang*</span>, Haoliang Li, Yap-Peng Tan, Alex C. Kot</div><div class="venue">NeurIPS Datasets and Benchmarks Track, 2021</div></article>
-      <article class="pub" data-type="conference"><div class="pub-title">Collaborative Learning of Gesture Recognition and 3D Hand Pose Estimation with Multi-Order Feature Analysis <span class="badge">Spotlight</span></div><div class="authors"><span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu, Meng Hwa Er, Alex C. Kot</div><div class="venue">ECCV, 2020</div></article>
-    </div><p style="color:var(--faint);font-size:12px;margin-top:12px">* Equal contribution. <sup>#</sup> Corresponding author.</p>
-  </section>
-</main>
-<footer>© <span id="year"></span> Siyuan Yang · Hosted on GitHub Pages</footer>
-<script>
-  const root=document.documentElement,btn=document.getElementById('theme');
-  const saved=localStorage.getItem('theme'); if(saved) root.dataset.theme=saved;
-  btn.onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('theme',root.dataset.theme)};
-  document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('#pub-list .pub').forEach(p=>p.style.display=b.dataset.filter==='all'||p.dataset.type===b.dataset.filter?'block':'none')});
-  document.getElementById('year').textContent=new Date().getFullYear();
-</script>
-</body></html>
+          <a class="pill"
+             href="https://scholar.google.com/citations?user=lzLsF2MAAAAJ&hl=en"
+             target="_blank"
+             rel="noopener">
+            Google Scholar
+          </a>
+        </div>
+      </div>
+
+      <img class="portrait"
+           src="assets/siyuan_yang.jpg"
+           alt="Siyuan Yang profile photo placeholder" />
+    </div>
+
+    <section id="service">
+      <h2 class="section-title">Professional Service</h2>
+
+      <dl class="service-list">
+        <dt>Area Chair:</dt>
+        <dd>ICLR 2027, BMVC 2026, VCIP 2026</dd>
+
+        <dt>Registration Chair:</dt>
+        <dd>BMVC 2026</dd>
+
+        <dt>Journal Reviewer:</dt>
+        <dd>IEEE TPAMI, TIP, TMM, TII, TCSVT, IJCV, and others</dd>
+
+        <dt>Conference Reviewer:</dt>
+        <dd>
+          CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI,
+          WACV, ICME, ICASSP, and others
+        </dd>
+      </dl>
+
+      <div class="content-block awards-block">
+        <h2 class="section-title">Awards</h2>
+
+        <ul class="clean">
+          <li>
+            <strong>Wallenberg–NTU Presidential Postdoctoral Fellowship</strong>, 2024
+          </li>
+          <li>
+            <strong>Singapore Data Science Consortium Dissertation Research Fellowship</strong>, 2021
+            <span class="award-note">(awarded to 10 doctoral researchers annually)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-block funding-block">
+        <h2 class="section-title">Research Funding</h2>
+
+        <ul class="clean">
+          <li>
+            <strong>Principal Investigator (PI):</strong>
+            All-in-One LLM Framework for 3D Human Motion Understanding,
+            Nanyang Technological University,
+            SGD 100,000, 2024
+          </li>
+
+          <li>
+            <strong>Principal Investigator (PI):</strong>
+            All-in-One LLM Framework for 3D Human Motion Understanding,
+            Knut and Alice Wallenberg Foundation,
+            SEK 300,000, 2026
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-block teaching-block">
+        <h2 class="section-title">Teaching</h2>
+
+        <p class="teaching-affiliation">
+          KTH Royal Institute of Technology
+        </p>
+
+        <ul class="clean">
+          <li>
+            <strong>Guest Lecturer:</strong>
+            DT2140: Multimodal Interaction and Interfaces (2026)
+          </li>
+        </ul>
+
+        <p class="teaching-affiliation">
+          Nanyang Technological University
+        </p>
+
+        <ul class="clean">
+          <li>
+            <strong>Lab Instructor:</strong>
+            IE2110: Signals and Systems (2025)
+          </li>
+          <li>
+            <strong>Teaching Assistant:</strong>
+            EE1005: C Programming;
+            IE2110 &amp; EE2010: Signals and Systems;
+            EE4483: Artificial Intelligence and Data Mining
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="preprints">
+      <h2 class="section-title">Preprints</h2>
+
+      <div id="preprint-list">
+        <article class="pub" data-type="preprint">
+          <div class="pub-title">
+            Image Diffusion Models Are Good 3D Human Motion Generators
+          </div>
+          <div class="authors">
+            <span class="me">Siyuan Yang*</span>, Chong Wang*, Hao Cheng,
+            Jun Liu, Bihan Wen, Alex C. Kot, Hedvig Kjellström
+          </div>
+          <div class="venue">
+            arXiv preprint, 2026 ·
+            <a href="https://arxiv.org/abs/2610.14254"
+               target="_blank"
+               rel="noopener">arXiv:2610.14254</a>
+          </div>
+        </article>
+
+        <article class="pub" data-type="preprint">
+          <div class="pub-title">
+            Skeleton-to-Image Encoding: Enabling Skeleton Representation Learning via Vision-Pretrained Models
+          </div>
+          <div class="authors">
+            <span class="me">Siyuan Yang</span>, Jun Liu, Hao Cheng,
+            Chong Wang, Shijian Lu, Hedvig Kjellström, Weisi Lin, Alex C. Kot
+          </div>
+          <div class="venue">
+            arXiv preprint, 2026 ·
+            <a href="https://arxiv.org/abs/2603.05963"
+               target="_blank"
+               rel="noopener">arXiv:2603.05963</a>
+          </div>
+        </article>
+
+        <article class="pub" data-type="preprint">
+          <div class="pub-title">
+            TAME: Topology-Aware Text-Driven Motion Editing across Heterogeneous Humanoid Skeletons
+          </div>
+          <div class="authors">
+            Qichen Zheng, <span class="me">Siyuan Yang<sup>#</sup></span>,
+            Chong Wang, Jun Liu, Shijian Lu, Alex C. Kot, Kwok-Yan Lam
+          </div>
+          <div class="venue">
+            arXiv preprint, 2026 ·
+            <a href="https://arxiv.org/abs/2610.04529"
+               target="_blank"
+               rel="noopener">arXiv:2610.04529</a>
+          </div>
+        </article>
+
+        <article class="pub" data-type="preprint">
+          <div class="pub-title">
+            Persistence Forcing: Exploiting Feature Specialization in Pixel-Space Diffusion
+          </div>
+          <div class="authors">
+            Chong Wang, Zixuan Fu, Shiqi Huang,
+            <span class="me">Siyuan Yang</span>, Hao Cheng, Bihan Wen
+          </div>
+          <div class="venue">
+            arXiv preprint, 2026 ·
+            <a href="https://arxiv.org/abs/2609.36014"
+               target="_blank"
+               rel="noopener">arXiv:2609.36014</a>
+          </div>
+        </article>
+      </div>
+
+      <p style="color:var(--faint);font-size:12px;margin-top:12px">
+        * Equal contribution. <sup>#</sup> Corresponding author.
+      </p>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Selected Publications</h2>
+
+      <p class="pub-note">
+        For a complete and up-to-date publication list, please see my
+        <a href="https://scholar.google.com/citations?user=lzLsF2MAAAAJ&hl=en"
+           target="_blank"
+           rel="noopener">Google Scholar profile</a>.
+      </p>
+
+      <div class="pub-controls">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="journal">Journal</button>
+        <button class="filter" data-filter="conference">Conference</button>
+      </div>
+
+      <div id="pub-list">
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            FaceComposer: Learning Coherent and Realistic Face Composition from References
+            <span class="badge">Oral</span>
+          </div>
+          <div class="authors">
+            Ling Li, Lanqing Guo, <span class="me">Siyuan Yang</span>,
+            Yufei Wang, Qian Zheng, Alex C. Kot, Weisi Lin, Lihui Chen
+          </div>
+          <div class="venue">IJCNN, 2026</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Beyond the Horizon: Decoupling Multi-View UAV Action Recognition via Partial Order Transfer
+          </div>
+          <div class="authors">
+            Wenxuan Liu, Zhuo Zhou, Xuemei Jia,
+            <span class="me">Siyuan Yang</span>, Wenxin Huang, Xian Zhong, Chia-Wen Lin
+          </div>
+          <div class="venue">AAAI, 2026</div>
+        </article>
+
+        <article class="pub" data-type="journal">
+          <div class="pub-title">
+            Proactive Image Manipulation Detection and Tracing in Fake News
+          </div>
+          <div class="authors">
+            Ruohan Meng, <span class="me">Siyuan Yang</span>, Zhili Zhou,
+            Qi Cui, Kwok-Yan Lam, Zengwei Zheng, Alex C. Kot
+          </div>
+          <div class="venue">
+            IEEE Transactions on Dependable and Secure Computing, 2026
+          </div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Vid-Group: Temporal Video Grounding Pretraining from Unlabeled Videos in the Wild
+          </div>
+          <div class="authors">
+            Peijun Bao, Chenqi Kong, <span class="me">Siyuan Yang</span>,
+            Zihao Shao, Xinghao Jiang, Boon Poh Ng, Meng Hwa Er, Alex C. Kot
+          </div>
+          <div class="venue">ICCV, 2025</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            MTL-UE: Learning to Learn Nothing for Multi-Task Learning
+          </div>
+          <div class="authors">
+            Yi Yu, Song Xia, <span class="me">Siyuan Yang</span>,
+            Wenhan Yang, Shijian Lu, Yap-Peng Tan, Alex C. Kot
+          </div>
+          <div class="venue">ICML, 2025</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Reconciling Stochastic and Deterministic Strategies for Zero-shot Image Restoration using Diffusion Model in Dual
+          </div>
+          <div class="authors">
+            Chong Wang, Lanqing Guo, Zixuan Fu,
+            <span class="me">Siyuan Yang</span>, Bihan Wen
+          </div>
+          <div class="venue">CVPR, 2025</div>
+        </article>
+
+        <article class="pub" data-type="journal">
+          <div class="pub-title">
+            One-Shot Action Recognition via Multi-Scale Spatial-Temporal Skeleton Matching
+          </div>
+          <div class="authors">
+            <span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu,
+            Meng Hwa Er, Alex C. Kot
+          </div>
+          <div class="venue">
+            IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024
+          </div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            STSP: Spatial-Temporal Subspace Projection for Video Class-Incremental Learning
+          </div>
+          <div class="authors">
+            Hao Cheng, <span class="me">Siyuan Yang</span>,
+            Joey Tianyi Zhou, Alex C. Kot, Bihan Wen
+          </div>
+          <div class="venue">ECCV, 2024</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Towards Physical World Backdoor Attacks against Skeleton Action Recognition
+          </div>
+          <div class="authors">
+            Qichen Zheng, Yi Yu, <span class="me">Siyuan Yang<sup>#</sup></span>,
+            Jun Liu, Kwok-Yan Lam, Alex C. Kot
+          </div>
+          <div class="venue">ECCV, 2024</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Unlearnable Examples Detection via Iterative Filtering
+            <span class="badge">Oral</span>
+          </div>
+          <div class="authors">
+            Yi Yu*, Qichen Zheng*, <span class="me">Siyuan Yang<sup>#</sup></span>,
+            Wenhan Yang, Jun Liu, Shijian Lu, Yap-Peng Tan, Kwok-Yan Lam, Alex C. Kot
+          </div>
+          <div class="venue">ICANN, 2024</div>
+        </article>
+
+        <article class="pub" data-type="journal">
+          <div class="pub-title">
+            Self-Supervised 3D Action Representation Learning with Skeleton Cloud Colorization
+          </div>
+          <div class="authors">
+            <span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu,
+            Meng Hwa Er, Yongjian Hu, Alex C. Kot
+          </div>
+          <div class="venue">
+            IEEE Transactions on Pattern Analysis and Machine Intelligence, 2023
+          </div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Frequency Guidance Matters in Few-Shot Learning
+            <span class="badge">Oral</span>
+          </div>
+          <div class="authors">
+            Hao Cheng, <span class="me">Siyuan Yang</span>,
+            Joey Tianyi Zhou, Alex C. Kot, Bihan Wen
+          </div>
+          <div class="venue">ICCV, 2023</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Temporal Coherent Test-Time Optimization for Robust Video Classification
+          </div>
+          <div class="authors">
+            Chenyu Yi, <span class="me">Siyuan Yang</span>,
+            Yufei Wang, Haoliang Li, Yap-Peng Tan, Alex C. Kot
+          </div>
+          <div class="venue">ICLR, 2023</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Skeleton Cloud Colorization for Unsupervised 3D Action Representation Learning
+          </div>
+          <div class="authors">
+            <span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu,
+            Meng Hwa Er, Alex C. Kot
+          </div>
+          <div class="venue">ICCV, 2021</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Benchmarking the Robustness of Spatial-Temporal Models Against Corruptions
+          </div>
+          <div class="authors">
+            Chenyu Yi*, <span class="me">Siyuan Yang*</span>,
+            Haoliang Li, Yap-Peng Tan, Alex C. Kot
+          </div>
+          <div class="venue">NeurIPS Datasets and Benchmarks Track, 2021</div>
+        </article>
+
+        <article class="pub" data-type="conference">
+          <div class="pub-title">
+            Collaborative Learning of Gesture Recognition and 3D Hand Pose Estimation with Multi-Order Feature Analysis
+            <span class="badge">Spotlight</span>
+          </div>
+          <div class="authors">
+            <span class="me">Siyuan Yang</span>, Jun Liu, Shijian Lu,
+            Meng Hwa Er, Alex C. Kot
+          </div>
+          <div class="venue">ECCV, 2020</div>
+        </article>
+      </div>
+
+      <p style="color:var(--faint);font-size:12px;margin-top:12px">
+        * Equal contribution. <sup>#</sup> Corresponding author.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Siyuan Yang · Hosted on GitHub Pages
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const btn = document.getElementById('theme');
+
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      root.dataset.theme = saved;
+    }
+
+    btn.onclick = () => {
+      root.dataset.theme =
+        root.dataset.theme === 'dark' ? 'light' : 'dark';
+
+      localStorage.setItem('theme', root.dataset.theme);
+    };
+
+    document.querySelectorAll('.filter').forEach(button => {
+      button.onclick = () => {
+        document.querySelectorAll('.filter').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        document.querySelectorAll('#pub-list .pub').forEach(publication => {
+          const show =
+            button.dataset.filter === 'all' ||
+            publication.dataset.type === button.dataset.filter;
+
+          publication.style.display = show ? 'block' : 'none';
+        });
+      };
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
