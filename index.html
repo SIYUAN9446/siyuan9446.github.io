@@ -341,7 +341,7 @@
   </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#top">Home</a><nav><a href="#about">About</a><a href="#service">Service</a><a href="#publications">Publications</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#top">Home</a><nav><a href="#about">About</a><a href="#service">Service</a><a href="#preprints">Publications</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button></nav></div></header>
 <main class="wrap" id="top">
   <div class="hero" id="about">
     <div><h1>Siyuan Yang</h1>
@@ -389,11 +389,12 @@
       <div>
         <ul class="clean">
           <li><strong>Area Chair:</strong> ICLR 2027, BMVC 2026, VCIP 2026</li>
-          <li><strong>Journal Reviewer:</strong> IEEE TPAMI, TIP, TMM, TII, TCSVT, IJCV, and others</li>
+          <li><strong>Registration Chair:</strong> BMVC 2026</li>
         </ul>
       </div>
       <div>
         <ul class="clean">
+          <li><strong>Journal Reviewer:</strong> IEEE TPAMI, TIP, TMM, TII, TCSVT, IJCV, and others</li>
           <li><strong>Conference Reviewer:</strong> CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI, WACV, ICME, ICASSP, and others</li>
         </ul>
       </div>
@@ -447,6 +448,28 @@
     </div>
   </section>
 
+  <section id="preprints">
+    <h2 class="section-title">Preprints</h2>
+    <div id="preprint-list">
+      <article class="pub" data-type="preprint">
+        <div class="pub-title">Image Diffusion Models Are Good 3D Human Motion Generators</div>
+        <div class="authors"><span class="me">Siyuan Yang*</span>, Chong Wang*, Hao Cheng, Jun Liu, Bihan Wen, Alex C. Kot, Hedvig Kjellström</div>
+        <div class="venue">arXiv preprint, 2026 · <a href="https://arxiv.org/abs/2610.14254" target="_blank" rel="noopener">arXiv:2610.14254</a></div>
+      </article>
+      <article class="pub" data-type="preprint">
+        <div class="pub-title">Skeleton-to-Image Encoding: Enabling Skeleton Representation Learning via Vision-Pretrained Models</div>
+        <div class="authors"><span class="me">Siyuan Yang</span>, Jun Liu, Hao Cheng, Chong Wang, Shijian Lu, Hedvig Kjellström, Weisi Lin, Alex C. Kot</div>
+        <div class="venue">arXiv preprint, 2026 · <a href="https://arxiv.org/abs/2603.05963" target="_blank" rel="noopener">arXiv:2603.05963</a></div>
+      </article>
+      <article class="pub" data-type="preprint">
+        <div class="pub-title">TAME: Topology-Aware Text-Driven Motion Editing for Arbitrary Skeletons</div>
+        <div class="authors">Qichen Zheng, <span class="me">Siyuan Yang<sup>#</sup></span>, Chong Wang, Jun Liu, Shijian Lu, Alex C. Kot, Kwok-Yan Lam</div>
+        <div class="venue">arXiv preprint, 2026 · <a href="https://arxiv.org/abs/2610.04529" target="_blank" rel="noopener">arXiv:2610.04529</a></div>
+      </article>
+    </div>
+    <p style="color:var(--faint);font-size:12px;margin-top:12px">* Equal contribution. <sup>#</sup> Corresponding author.</p>
+  </section>
+
   <section id="publications">
     <h2 class="section-title">Selected Publications</h2>
     <p class="pub-note">
@@ -479,7 +502,7 @@
   const root=document.documentElement,btn=document.getElementById('theme');
   const saved=localStorage.getItem('theme'); if(saved) root.dataset.theme=saved;
   btn.onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('theme',root.dataset.theme)};
-  document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.pub').forEach(p=>p.style.display=b.dataset.filter==='all'||p.dataset.type===b.dataset.filter?'block':'none')});
+  document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('#pub-list .pub').forEach(p=>p.style.display=b.dataset.filter==='all'||p.dataset.type===b.dataset.filter?'block':'none')});
   document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body></html>
