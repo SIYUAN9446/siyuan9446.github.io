@@ -111,17 +111,22 @@
       cursor:pointer;
     }
 
-    main{
-      padding:52px 0 80px;
+    main.wrap{
+      padding-top:52px;
+      padding-bottom:80px;
     }
 
     .hero{
-      display:grid;
-      grid-template-columns:1fr 178px;
-      gap:46px;
-      align-items:center;
       padding-bottom:45px;
       border-bottom:1px solid var(--border);
+    }
+
+    .hero-header{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 178px;
+      gap:32px;
+      align-items:start;
+      margin-bottom:24px;
     }
 
     h1{
@@ -141,12 +146,11 @@
       font-size:14px;
       color:var(--faint);
       margin-top:0;
-      margin-bottom:16px;
+      margin-bottom:0;
     }
 
     .intro{
       color:var(--muted);
-      max-width:650px;
       margin-bottom:10px;
     }
 
@@ -171,6 +175,8 @@
     }
 
     .portrait{
+      display:block;
+      justify-self:end;
       width:178px;
       height:178px;
       border-radius:12px;
@@ -321,12 +327,14 @@
         display:none;
       }
 
-      .hero{
+      .hero-header{
         grid-template-columns:1fr;
+        gap:18px;
       }
 
       .portrait{
         order:-1;
+        justify-self:start;
         width:132px;
         height:132px;
       }
@@ -335,7 +343,7 @@
         font-size:36px;
       }
 
-      main{
+      main.wrap{
         padding-top:34px;
       }
     }
@@ -354,12 +362,17 @@
 </div></header>
 <main class="wrap" id="top">
   <div class="hero" id="about">
-    <div>
-<h1>Siyuan Yang</h1>
-      <div class="role">Wallenberg–NTU Presidential Postdoctoral Fellow</div>
-      <div class="affiliation">
-        Division of Robotics, Perception and Learning, KTH Royal Institute of Technology
+    <div class="hero-header">
+      <div>
+        <h1>Siyuan Yang</h1>
+        <div class="role">Wallenberg–NTU Presidential Postdoctoral Fellow</div>
+        <div class="affiliation">
+          Division of Robotics, Perception and Learning, KTH Royal Institute of Technology
+        </div>
       </div>
+      <img class="portrait" src="assets/siyuan_yang.jpg" alt="Siyuan Yang" width="178" height="178">
+    </div>
+    <div class="hero-body">
       <p class="intro">
         I am a Wallenberg–NTU Presidential Postdoctoral Fellow, currently hosted at the Division of Robotics, Perception and Learning, KTH Royal Institute of Technology and working with
         <a href="https://www.kth.se/profile/hedvig/">Prof. Hedvig Kjellström</a>. During the first year of my fellowship, I was based at the College of Computing and Data Science, Nanyang Technological University, where I worked with
@@ -371,7 +384,7 @@
         <strong>human activity understanding, motion representation learning, and 3D human motion generation</strong>.
         I develop methods that learn with limited supervision and connect human motion with pretrained vision and generative models.
       </p>
-<p class="intro">
+      <p class="intro">
         I received my Ph.D. and M.Sc. degrees from Nanyang Technological University. My Ph.D. research was conducted at the Rapid-Rich Object Search Lab and supervised by
         <a href="https://dr.ntu.edu.sg/entities/person/Kot-Chichung-Alex">Prof. Alex C. Kot</a>
         and
@@ -388,9 +401,12 @@
         <a class="pill" href="https://scholar.google.com/citations?user=lzLsF2MAAAAJ&amp;hl=en" target="_blank" rel="noopener">
           Google Scholar
         </a>
+
+        <a class="pill" href="assets/YANG_SIYUAN_CV_2026Oct.pdf" target="_blank" rel="noopener">
+          CV (PDF)
+        </a>
       </div>
     </div>
-<img class="portrait" src="assets/siyuan_yang.jpg" alt="Siyuan Yang">
   </div>
 
   <section id="preprints">
